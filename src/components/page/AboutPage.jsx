@@ -4,7 +4,7 @@ import site from '../../assets/images/site.png'
 
 const AboutPage = () => {
   return (
-    <div className='main' style={{ textAlign: 'center' , margin: '0 auto', padding:'1%' , background: 'lineaer-gradient(to right, black, white)'}}>
+    <div className='main' style={{ textAlign: 'center', margin: '0 auto', padding: '1%', display: 'inline', width: '50%' }} >
         <div>
           <h2>
             <u>Purpose: <p>This project was made as a FrontEnd Assignment.</p></u>

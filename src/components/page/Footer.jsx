@@ -33,9 +33,19 @@ const Footer = () => {
           <div><a href='' target='_blank'>Project</a></div>
         </div>
       </Grid>
-            <div style={{ color: 'grey', marginTop: '1%' }}>
-              <span >RentEstate @ 2022</span>
-            </div>
+        <div style={{ width: '100%', margin: '1.5% 0' }} className='footer_items_div'>
+          <div style={{ display: 'flex', justifyContent: 'space-evenly', color: 'white !important' }} >
+            <a href='https://www.linkedin.com/in/bobde-yagyesh/?lipi=urn%3Ali%3Apage%3Ad_flagship3_feed%3BUieEc2dVTSaTeQ4HpxrMyw%3D%3D' target='_blank'><i className="fa-brands fa-linkedin"></i></a>
+
+            <a href='https://github.com/yagyesh-bobde' target='_blank'><i className="fa-brands fa-github"></i></a>
+            <a href='https://twitter.com/bobde_yagyesh' target='_blank'><i className="fa-brands fa-square-twitter"></i></a>
+            <a href='https://www.instagram.com/bobde_yagyesh/' target='_blank'><i className="fa-brands fa-square-instagram"></i></a>
+          </div>
+          
+      </div>
+        <div style={{ color: 'grey', marginTop: '1%' }}>
+          <span >RentEstate @ 2022</span>
+        </div>
     </Grid>
     
     </div>

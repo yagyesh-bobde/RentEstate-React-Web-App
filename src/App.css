@@ -14,8 +14,9 @@ body {
 
 /* loading */
 .loading {
-    display: inline;
-    margin: 5% auto;
+    position: absolute;
+    top: 50%;
+    left: 30%;
 }
 
 .link_tab {
@@ -158,4 +159,8 @@ a{
     padding-left: 2.5%;
     color: pink;
     font-size: 1rem;
+}
+
+.footer_items_div div a {
+    color: white
 }

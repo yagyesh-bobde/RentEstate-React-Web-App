@@ -1,38 +1,147 @@
-.App {
-  text-align: center;
+body {
+    width: 100%;
+    height: 100vh;
+    padding: 0;
+    margin: 0;
+}
+.nav-color {
+    background-color: #041c34 !important;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* loading */
+.loading {
+    margin: 0 auto;
+    position: fixed;
+
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+
+/* FILTERS */
+
+label {
+    padding-left: 10% !important;
+    text-align:left;
+    color: grey;
+    font-size: smaller;
+    display: block;
+    border-radius: 50px 50px 50px 50px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+select {
+    font-weight: 600;
+    font-family:  Arial, sans-serif;
+    border: none;
+    width: 100%;
+    padding: 5%;
+    border-radius: 50px 50px 50px 50px;
 }
 
-.App-link {
-  color: #61dafb;
+
+.slider {
+    padding: 5% 0 !important;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.filter-form Button{
+    
+    margin-left: 2%;
+    color: white;
+    border: 2px solid purple;
+    font-weight: 600;
+    font-family: sans-serif;
+    border-radius: 10%;
+    padding: 3% 5%;
+    background-color: #7a18b8;
+}
+.filter-form SearchIcon {
+    margin-right: 4px !important;
+}
+.filter-form Button:hover{
+    background-color: black;
+}
+
+
+.filter_form_items{
+    align-items: center;
+    
+}
+.filter-box {
+    min-height: fit-content;
+    min-width: 30px;
+    max-width: 150px;
+    max-height: 50px;
+    box-shadow: 2px 2px 2px 2px grey;
+    padding: 2% 1%;
+}
+
+/* CARD CSS */
+a{
+    text-decoration: none !important;
+}
+.grid-item-card:hover {
+    box-shadow: 0 0 5px 5px grey ;
+}
+.badge{
+    display: inline-flex;
+    margin-right: -5%;
+    min-width: min-content;
+    max-width: 50px;
+    min-height: 20px;
+    max-height: 30px;
+    padding: 0 5%;
+    color: white;
+    font-weight: 700;
+    align-items: center;
+    background-color: rgba(200,0,0,0.7);
+}
+.typo-h2{
+    color: purple;
+    margin: 0 0 !important;
+}
+
+.typo-h2 span {
+    font-size: small;
+    color: grey;
+}
+.typo-h1 {
+    margin: 0 0 !important;
+}
+.typo-p {
+    margin: 0 0  !important;
+}
+
+
+
+
+
+/* FOOTER */
+.footer {
+
+    margin-top : 5%;
+    z-index: 10;
+    color: white;
+    width: 100%;
+    height: 10%;
+    background-color: #041c34 !important;
+    box-shadow: 2px 2px 7px 5px black;
+    padding-bottom: 2%;
+}
+.footer_container{
+    display: 'flex';
+    justify-content: space-around;
+    margin: 0 auto !important;
+    width: 75% !important;
+    text-align: center;
+}
+
+
+.footer_items_div div {
+    padding: 1%;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+}
+.footer_items_div a {
+    padding-left: 2.5%;
+    color: pink;
+    font-size: 1rem;
 }

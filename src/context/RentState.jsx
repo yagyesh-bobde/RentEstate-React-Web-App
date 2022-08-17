@@ -6,11 +6,10 @@ export const RentContext = createContext();
 const RentState = (props) => {
     const [properties, setproperties] = useState([]);
     const [paging, setpaging] = useState(null);
-    const [transactionId, settransactionId] = useState(2);
     // TODO: GET RENT PROPERTIES
 
     const getProperties = async ( page=1 ,sortby=1, Min=0, Max=999999, type=3 ) => {
-        settransactionId(type)
+      
         const options = {
             method: 'GET',
             headers: {

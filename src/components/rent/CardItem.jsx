@@ -7,6 +7,7 @@ import IconButton from '@mui/material/IconButton';
 import StarRateTwoToneIcon from '@mui/icons-material/StarRateTwoTone';
 import LocalHotelTwoToneIcon from '@mui/icons-material/LocalHotelTwoTone';
 import HotTubTwoToneIcon from '@mui/icons-material/HotTubTwoTone';
+import { useLocation } from 'react-router-dom';
 
 
 export default function CardItem({ property }) {
@@ -21,6 +22,8 @@ export default function CardItem({ property }) {
     }
   ]
 
+  const location = useLocation();
+
   let image_url = '';
   try {
     image_url = property?.Property?.Photo[0]?.HighResPath;
@@ -28,16 +31,8 @@ export default function CardItem({ property }) {
     image_url = 'https://image.shutterstock.com/image-vector/picture-vector-icon-no-image-260nw-1732584305.jpg'
   }
 
-  let price = '';
-  try {
-   
-      price = property.Property.Price?.split(" ")[0]
-   
-  } catch (error) {
-    price = property.Property.LeaseRent?.split("/")[0];
-  }
-    
-
+  console.log(property.Property.LeaseRent)
+  console.log(property.Property.Price)
   return (
     <a target="_blank" href={`https://realtor.ca${property?.RelativeDetailsURL}`}>
     <Card className='grid-item-card' sx={{ maxWidth: 300 , boxShadow: '5px 5px 2px 4px grey', borderRadius: '5%', maxHeight: '50vh'}}>
@@ -51,7 +46,10 @@ export default function CardItem({ property }) {
       
       <CardContent sx={{ justifyContent:'min-content', maxHeight: '10%'}}>
           <h1 className='typo-h2'>
-            {price}
+            {!(property.Property.Price ) ? property.Property.LeaseRent?.split("/")[0] : property.Property.Price?.split(" ")[0] }
+            <span>
+              {!(property.Property.Price ) ? `/${property.Property.LeaseRent?.split("/")[1]}` : ''}
+              </span>
           </h1> 
           <h2 className='typo-h1'>{property.Property.Type}</h2>
           <p className='typo-p' >{property.Property.Address?.AddressText}</p>
@@ -63,10 +61,10 @@ export default function CardItem({ property }) {
             return (
               <IconButton key={room.text} aria-label="add to favorites" sx={{ display: 'inline', color: 'purple', fontSize:'1rem'}}>
                 <div>
-                {room.icon}
+                  {room.icon}
                 </div>
                 <div>
-                {room.text}
+                 {room.text}
                 </div>
               </IconButton>
             )

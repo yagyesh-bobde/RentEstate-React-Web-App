@@ -45,7 +45,7 @@ const nxtPage = () => {
             <h1>Properties for Sale</h1> 
         </header>
       <Filter rent={false} />
-      {(properties.length === 0) && <div><LoadingButton className='loading'
+      {(properties.length === 0) && <div className='loading'><LoadingButton 
         color="secondary"
         onClick={handleClick}
         loading={loading}

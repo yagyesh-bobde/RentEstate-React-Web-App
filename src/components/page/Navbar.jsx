@@ -13,19 +13,7 @@ import ShoppingCartTwoToneIcon from '@mui/icons-material/ShoppingCartTwoTone';
 import HomeTwoToneIcon from '@mui/icons-material/HomeTwoTone';
 import Tabs from '@mui/material/Tabs';
 import { RentContext } from '../../context/RentState';
-import InventoryTwoToneIcon from '@mui/icons-material/InventoryTwoTone';
 
-// function LinkTab(props) {
-//     return (
-//         <Tab
-//             component="a"
-//             onClick={(event) => {
-//                 event.preventDefault();
-//             }}
-//             {...props}
-//         />
-//     );
-// }
 
 
 const Navbar = () => {

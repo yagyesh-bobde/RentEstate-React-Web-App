@@ -64,7 +64,7 @@ const nxtPage = () => {
         <div style={{ marginTop: '5%', display: "flex", justifyContent: 'space-between' }}>
           <Button onClick={prevPage} disabled={currPage === 1} variant="outlined"><ArrowBackTwoToneIcon /> Previous Page</Button>
 
-          <Button variant="contained" disabled >{paging.CurrentPage}<span>/{paging.TotalPages}</span></Button>
+          <Button variant="contained" disabled style={{ fontWeight: '800' }} >{paging.CurrentPage}<span>/{paging.TotalPages}</span></Button>
 
           <Button onClick={nxtPage} disabled={ currPage === paging.TotalPages} variant="outlined">Next Page <ArrowForwardTwoToneIcon /></Button>
         </div>

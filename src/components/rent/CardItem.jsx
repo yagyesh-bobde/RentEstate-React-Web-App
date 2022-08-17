@@ -1,4 +1,4 @@
-import  React , { useContext} from 'react';
+import  React from 'react';
 import Card from '@mui/material/Card';
 import CardMedia from '@mui/material/CardMedia';
 import CardContent from '@mui/material/CardContent';
@@ -7,8 +7,6 @@ import IconButton from '@mui/material/IconButton';
 import StarRateTwoToneIcon from '@mui/icons-material/StarRateTwoTone';
 import LocalHotelTwoToneIcon from '@mui/icons-material/LocalHotelTwoTone';
 import HotTubTwoToneIcon from '@mui/icons-material/HotTubTwoTone';
-import { RentContext } from '../../context/RentState';
-
 
 
 export default function CardItem({ property }) {
@@ -22,7 +20,6 @@ export default function CardItem({ property }) {
       text: `3 Bathrooms`
     }
   ]
-  const { transactionId } = useContext(RentContext)
 
   let image_url = '';
   try {

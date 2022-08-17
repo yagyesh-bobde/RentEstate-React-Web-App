@@ -40,11 +40,12 @@ const nxtPage = () => {
 
 
   return (
-    <Container>
+    <Container className='main'>
       <header>
             <h1>Properties for Sale</h1> 
         </header>
-      {(properties.length === 0) && <div><LoadingButton
+      <Filter rent={false} />
+      {(properties.length === 0) && <div><LoadingButton className='loading'
         color="secondary"
         onClick={handleClick}
         loading={loading}
@@ -55,7 +56,7 @@ const nxtPage = () => {
         Loading Properties
       </LoadingButton></div>}
       { !(properties.length === 0) && <div>
-        <Filter rent={false} />
+       
         <div style={{ display:'flex' , justifyContent: 'end', color: 'black', fontWeight: '700'}}>
           <span>Total Results: {paging.TotalRecords}</span>
         </div>

@@ -73,7 +73,6 @@ const Navbar = () => {
                     <Tabs className='tabs' value={value} onChange={handleChange} aria-label="nav tabs example">
                         <Tab className="link_tab" value={'/'} icon={<HomeTwoToneIcon />} iconPosition="start" label="Rent" />
                         <Tab className="link_tab" value={'/buy'} icon={<ShoppingCartTwoToneIcon />} iconPosition="start" label="Buy" />
-                        <Tab className="link_tab" value={'/sell'} icon={<InventoryTwoToneIcon />} iconPosition="start" label="Sell" />
                         <Tab className="link_tab" value={'/about'} icon={<InfoTwoToneIcon />} iconPosition="start" label="About" />
                     </Tabs>                    
                 </Box>

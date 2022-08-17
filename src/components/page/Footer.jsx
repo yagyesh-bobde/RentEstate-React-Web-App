@@ -33,7 +33,11 @@ const Footer = () => {
           <div><a href='' target='_blank'>Project</a></div>
         </div>
       </Grid>
+            <div style={{ color: 'grey', marginTop: '1%' }}>
+              <span >RentEstate @ 2022</span>
+            </div>
     </Grid>
+    
     </div>
   )
 }

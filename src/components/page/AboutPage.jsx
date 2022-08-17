@@ -1,5 +1,5 @@
 import React from 'react'
-import site from '../assets/images/site.png'
+import site from '../../assets/images/site.png'
 
 
 const AboutPage = () => {

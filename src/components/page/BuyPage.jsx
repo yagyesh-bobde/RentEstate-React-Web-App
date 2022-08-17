@@ -1,8 +1,8 @@
 import React, { useContext, useEffect } from 'react'
 import { Container } from '@mui/system'
-import Filter from './rent/Filter'
-import HouseList from './rent/HouseList'
-import {  RentContext } from '../context/RentState'
+import Filter from '../rent/Filter'
+import HouseList from '../rent/HouseList'
+import {  RentContext } from '../../context/RentState'
 import LoadingButton from '@mui/lab/LoadingButton';
 import Button from '@mui/material/Button';
 import SaveIcon from '@mui/icons-material/Save';
@@ -23,7 +23,8 @@ const RentPage = () => {
   }
 
   useEffect(() => {
-    getProperties(1, 1, 0, 999999, 3)
+    // page=1 ,sortby=1, Min=0, Max=999999, type=3 
+    getProperties( 1 , 1, 0, 999999, 2 )
     // eslint-disable-next-line
   }, []);
 
@@ -41,7 +42,7 @@ const nxtPage = () => {
   return (
     <Container>
       <header>
-            <h1>Properties for Rent</h1> 
+            <h1>Properties for Sale</h1> 
         </header>
       {(properties.length === 0) && <div><LoadingButton
         color="secondary"
@@ -54,7 +55,7 @@ const nxtPage = () => {
         Loading Properties
       </LoadingButton></div>}
       { !(properties.length === 0) && <div>
-        <Filter rent={true} />
+        <Filter rent={false} />
         <div style={{ display:'flex' , justifyContent: 'end', color: 'black', fontWeight: '700'}}>
           <span>Total Results: {paging.TotalRecords}</span>
         </div>

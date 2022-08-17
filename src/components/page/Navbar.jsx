@@ -1,40 +1,44 @@
-import * as React from 'react';
+import React, { useState, useContext} from 'react';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
-import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { Avatar } from '@mui/material';
-import logo from '../assets/images/logo.png';
+import logo from '../../assets/images/logo.png';
 import { useLocation, useNavigate } from 'react-router-dom';
-import HomeTwoToneIcon from '@mui/icons-material/HomeTwoTone';
-import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
 import InfoTwoToneIcon from '@mui/icons-material/InfoTwoTone';
 import ShoppingCartTwoToneIcon from '@mui/icons-material/ShoppingCartTwoTone';
+import HomeTwoToneIcon from '@mui/icons-material/HomeTwoTone';
+import Tabs from '@mui/material/Tabs';
+import { RentContext } from '../../context/RentState';
+import InventoryTwoToneIcon from '@mui/icons-material/InventoryTwoTone';
 
-function LinkTab(props) {
-    return (
-        <Tab
-            component="a"
-            onClick={(event) => {
-                event.preventDefault();
-            }}
-            {...props}
-        />
-    );
-}
+// function LinkTab(props) {
+//     return (
+//         <Tab
+//             component="a"
+//             onClick={(event) => {
+//                 event.preventDefault();
+//             }}
+//             {...props}
+//         />
+//     );
+// }
 
 
 const Navbar = () => {
 
     const navigate = useNavigate();
-    const [value, setValue] = React.useState('');
+    const location = useLocation();
+    const [value, setValue] = useState(location.pathname);
+    const { setproperties } = useContext(RentContext)
 
     const handleChange = (event, newValue) => {
         setValue(newValue);
-        navigate(`/${newValue}`)
+        navigate(`${newValue}`)
+        setproperties([])
     };
     return (
         <AppBar position="static" className='nav-color'>
@@ -50,7 +54,8 @@ const Navbar = () => {
                         href="/"
                         sx={{
                             mr: 2,
-                            display: { xs: 'none', md: 'flex' },
+                            display: { xs: 'flex', md: 'flex' },
+                            justifyContent: { xs: 'center', md: 'flex-start'},
                             fontFamily: 'monospace',
                             fontWeight: 700,
                             letterSpacing: '.3rem',
@@ -66,9 +71,10 @@ const Navbar = () => {
             <Container >
                 <Box sx={{ width: '100%' , display: 'flex', justifyContent: 'space-around'}}>
                     <Tabs className='tabs' value={value} onChange={handleChange} aria-label="nav tabs example">
-                        <Tab className="link_tab" value={''} icon={<HomeTwoToneIcon />} iconPosition="start" label="Rent" />
-                        <Tab className="link_tab" value={'buy'} icon={<ShoppingCartTwoToneIcon />} iconPosition="start" label="Buy" />
-                        <Tab className="link_tab" value={'about'} icon={<InfoTwoToneIcon />} iconPosition="start" label="About" />
+                        <Tab className="link_tab" value={'/'} icon={<HomeTwoToneIcon />} iconPosition="start" label="Rent" />
+                        <Tab className="link_tab" value={'/buy'} icon={<ShoppingCartTwoToneIcon />} iconPosition="start" label="Buy" />
+                        <Tab className="link_tab" value={'/sell'} icon={<InventoryTwoToneIcon />} iconPosition="start" label="Sell" />
+                        <Tab className="link_tab" value={'/about'} icon={<InfoTwoToneIcon />} iconPosition="start" label="About" />
                     </Tabs>                    
                 </Box>
             </Container>

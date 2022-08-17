@@ -2,6 +2,9 @@ import { Grid } from '@mui/material'
 import React from 'react'
 import MarkEmailUnreadTwoToneIcon from '@mui/icons-material/MarkEmailUnreadTwoTone';
 import PhoneTwoToneIcon from '@mui/icons-material/PhoneTwoTone';
+import ShoppingCartTwoToneIcon from '@mui/icons-material/ShoppingCartTwoTone';
+import HomeTwoToneIcon from '@mui/icons-material/HomeTwoTone';
+import InventoryTwoToneIcon from '@mui/icons-material/InventoryTwoTone';
 
 const Footer = () => {
   return (
@@ -10,9 +13,10 @@ const Footer = () => {
       <Grid item xs={4} md={3} lg={4} >
         <h2 className='footer_item_heading'>Services</h2>
         <div className='footer_items_div'>
-          <p><a href='' target='_blank'>Rent Properties</a></p>
-          <p><a href='' target='_blank'>Buy Properties</a></p>
-            <p><a href='' target='_blank'>Sell Properties</a></p>
+            <div><HomeTwoToneIcon /><a href='/' target='_blank'>Rent</a></div>
+            <div><ShoppingCartTwoToneIcon /><a href='/buy' target='_blank'> Buy</a></div>
+            <div><InventoryTwoToneIcon /><a href='/sell' target='_blank'> Sell</a></div>
+
         </div>
       </Grid>
       <Grid item xs={4} md={3} lg={4} >

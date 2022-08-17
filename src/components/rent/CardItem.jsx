@@ -1,4 +1,4 @@
-import * as React from 'react';
+import  React , { useContext} from 'react';
 import Card from '@mui/material/Card';
 import CardMedia from '@mui/material/CardMedia';
 import CardContent from '@mui/material/CardContent';
@@ -7,6 +7,7 @@ import IconButton from '@mui/material/IconButton';
 import StarRateTwoToneIcon from '@mui/icons-material/StarRateTwoTone';
 import LocalHotelTwoToneIcon from '@mui/icons-material/LocalHotelTwoTone';
 import HotTubTwoToneIcon from '@mui/icons-material/HotTubTwoTone';
+import { RentContext } from '../../context/RentState';
 
 
 
@@ -21,6 +22,7 @@ export default function CardItem({ property }) {
       text: `3 Bathrooms`
     }
   ]
+  const { transactionId } = useContext(RentContext)
 
   let image_url = '';
   try {
@@ -28,7 +30,19 @@ export default function CardItem({ property }) {
   } catch (error) {
     image_url = 'https://image.shutterstock.com/image-vector/picture-vector-icon-no-image-260nw-1732584305.jpg'
   }
-  console.log()
+
+  let price = '';
+  try {
+    if (transactionId === 2) {
+      price = property.Property.Price?.split(" ")[0]
+    } else {
+      price = property.Property.LeaseRent?.split("/")[0];
+    }
+  } catch (error) {
+    price = '$1/sqft'
+  }
+    
+
   return (
     <a target="_blank" href={`https://realtor.ca${property?.RelativeDetailsURL}`}>
     <Card className='grid-item-card' sx={{ maxWidth: 300 , boxShadow: '5px 5px 2px 4px grey', borderRadius: '5%', maxHeight: '50vh'}}>
@@ -41,8 +55,9 @@ export default function CardItem({ property }) {
       />
       
       <CardContent sx={{ justifyContent:'min-content', maxHeight: '10%'}}>
-        
-
+          <h2 className='typo-h2'>
+            {price}
+          </h2> 
           {property.Property.LeaseRent ? <h2 className='typo-h2'> 
           {property.Property.LeaseRent.split("/")[0] }</h2>:
           <h2 className='typo-h2'> 

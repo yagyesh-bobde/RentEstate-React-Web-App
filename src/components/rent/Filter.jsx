@@ -3,7 +3,7 @@ import React, { useContext } from 'react'
 import FilterListTwoToneIcon from '@mui/icons-material/FilterListTwoTone';
 import { RentContext } from '../../context/RentState';
 
-const Filter = () => {
+const Filter = ({ rent }) => {
   const { getProperties, setproperties } = useContext(RentContext);
   
   const handleSubmit= (e) => {
@@ -65,9 +65,9 @@ const Filter = () => {
     {/* FILTER 3  SORT BY */}
       <Grid item className='filter_boxes_each' xs={4} md={2} lg={2}>
           <label disabled className='filter-box'>
-            Rent or Buy
+            {`${rent ? 'Rent' : 'Buy'}`}
             <div>
-              <select id='sort_by'  name='sort_by' defaultValue={3} >
+              <select id='sort_by'  name='sort_by' defaultValue={rent? 3: 2} >
                 <option value={2} >Sale</option>
                 <option value={3} >Rent</option>
               </select>

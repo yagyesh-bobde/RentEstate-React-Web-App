@@ -43,7 +43,11 @@ export default function CardItem({ property }) {
       <CardContent sx={{ justifyContent:'min-content', maxHeight: '10%'}}>
         
 
-        <h2 className='typo-h2'>{property.Property.LeaseRent.split("/")[0]}<span>/month</span></h2>
+          {property.Property.LeaseRent ? <h2 className='typo-h2'> 
+          {property.Property.LeaseRent.split("/")[0] }</h2>:
+          <h2 className='typo-h2'> 
+          {property.Property.Price.split(" ")[0]}
+          </h2> }
           <h2 className='typo-h1'>{property.Property.Type}</h2>
           <p className='typo-p' >{property.Property.Address?.AddressText}</p>
 

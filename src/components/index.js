@@ -1,3 +1,5 @@
 export { default as Navbar} from './Navbar'
 export { default as Footer} from './Footer'
 export { default as RentPage} from './RentPage'
+export { default as BuyPage} from './BuyPage'
+export { default as AboutPage} from './AboutPage'

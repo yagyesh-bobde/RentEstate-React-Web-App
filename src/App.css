@@ -48,8 +48,8 @@ select {
     border: 2px solid purple;
     font-weight: 600;
     font-family: sans-serif;
-    border-radius: 10%;
-    padding: 3% 5%;
+    border-radius: 50px 50px 50px 50px;
+    padding: 5% 5%;
     background-color: #7a18b8;
 }
 .filter-form SearchIcon {

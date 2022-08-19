@@ -2,7 +2,7 @@
 This is a online listing for rental/sale properties all over the country. You can see the details of each property, be it for rent or for sale. You can even put up properties for sale yourselves!
 
 ## Deployed Using Netlify: 
-
+URL=> https://astounding-dieffenbachia-8c63bd.netlify.app/
 
 ## API USED
 ### Realty in CA API

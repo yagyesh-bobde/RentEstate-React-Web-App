@@ -14,7 +14,7 @@ const RentPage = () => {
   const { getProperties, properties, paging, setproperties } = useContext(RentContext);
   
   let currPage=0;
-  if (properties.length !== 0 ){
+  if (properties?.length !== 0 ){
     currPage = paging.CurrentPage;
   }
   const [loading, setLoading] = React.useState(true);
@@ -45,7 +45,7 @@ const nxtPage = () => {
             <h1>Properties for Sale</h1> 
         </header>
       <Filter rent={false} />
-      {(properties.length === 0) && <div className='loading'><LoadingButton 
+      {(properties?.length === 0) && <div className='loading'><LoadingButton 
         color="secondary"
         onClick={handleClick}
         loading={loading}
@@ -55,7 +55,7 @@ const nxtPage = () => {
       >
         Loading Properties
       </LoadingButton></div>}
-      { !(properties.length === 0) && <div>
+      { !(properties?.length === 0) && <div>
        
         <div style={{ display:'flex' , justifyContent: 'end', color: 'black', fontWeight: '700'}}>
           <span>Total Results: {paging.TotalRecords}</span>

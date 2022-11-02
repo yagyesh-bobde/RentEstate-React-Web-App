@@ -14,7 +14,7 @@ const RentPage = () => {
   const { getProperties, properties, paging, setproperties } = useContext(RentContext);
   
   let currPage=0;
-  if (properties.length !== 0 ){
+  if (properties?.length !== 0 ){
     currPage = paging.CurrentPage;
   }
   const [loading, setLoading] = React.useState(true);
